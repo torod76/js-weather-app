@@ -156,7 +156,7 @@ body {
             align-items: center;
     -ms-grid-columns: auto 30px 1fr;
     grid-template-columns: auto 1fr;
-    
+    margin-top: 2em;
     gap: 30px;
     width: 100%;
 }
