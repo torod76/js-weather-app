@@ -237,28 +237,6 @@ function setCurrentInfo(response) {
                     </span>
                 </div>`;
     setForecastInfo(response);
-    /* const windInfo = document.querySelector("#wind");
-    windInfo.innerHTML = `${response.list[0].wind.speed}mph`;
-
-    const sunriseInfo = document.querySelector("#sunrise");
-    const sunriseTime = convertDate(response.city.sunrise);
-    sunriseInfo.innerHTML = getTimeStamp(sunriseTime);
-
-    const sunsetInfo = document.querySelector("#sunset");
-    const sunsetTime = convertDate(response.city.sunset);
-    sunsetInfo.innerHTML = getTimeStamp(sunsetTime);
-
-    const highInfo = document.querySelector("#high");
-    highInfo.innerHTML = `${Math.round(getHighestWeather(getWeathersToday(response)))}°`;
-
-    const lowInfo = document.querySelector("#low");
-    lowInfo.innerHTML = `${Math.round(getLowestWeather(getWeathersToday(response)))}°`;
-
-    const rainInfo = document.querySelector("#rain");
-    rainInfo.innerHTML = getRainInfo(response);
-
-    setForecastInfo(response); */
-
 }
 
 function setForecastInfo(response) {
