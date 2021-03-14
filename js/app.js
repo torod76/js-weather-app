@@ -17,15 +17,37 @@ cityInput.addEventListener("keydown", e => {
     }
 })
 
-/* function getLocation() {
+function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     }
 }
 
 function showPosition(position) {
-    console.log(position);
-} */
+    fetchPositionAPI(position.coords.latitude, position.coords.longitude);
+}
+
+
+getLocation();
+
+function fetchPositionAPI(latitude, longitude) {
+    const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: function (response) {
+            setPosition(response);
+        },
+        error: function (error) {
+            console.log("Cannot set position: " + error);
+        }
+    })
+
+}
+
+function setPosition(response) {
+    cityInput.value = response.city;
+}
 
 function fetchWeatherAPI(cityName) {
     $.ajax({
