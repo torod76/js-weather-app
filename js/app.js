@@ -5,6 +5,10 @@ const dataContainer = document.querySelector(".data-container");
 const locationForm = document.querySelector("#location-form");
 
 
+window.addEventListener("load", e => {
+    getLocation();
+})
+
 locationForm.addEventListener("submit", e => {
     e.preventDefault();
     $("#city-input").blur();
@@ -27,8 +31,6 @@ function showPosition(position) {
     fetchPositionAPI(position.coords.latitude, position.coords.longitude);
 }
 
-
-getLocation();
 
 function fetchPositionAPI(latitude, longitude) {
     const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
