@@ -7,6 +7,7 @@ const locationForm = document.querySelector("#location-form");
 
 locationForm.addEventListener("submit", e => {
     e.preventDefault();
+    $("#city-input").blur();
 })
 
 cityInput.addEventListener("keydown", e => {
