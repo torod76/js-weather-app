@@ -62,6 +62,7 @@ function fetchWeatherAPI(cityName) {
             compact: "ultra"
         },
         success: function (response) {
+            console.log(response);
             if (!cityInput.classList.contains("input-up")) {
                 cityInput.classList.add("input-up");
             }
@@ -72,6 +73,7 @@ function fetchWeatherAPI(cityName) {
             }
         },
         error: function (xhr, options, error) {
+            console.log(error);
             if (!cityInput.classList.contains("input-up")) {
                 cityInput.classList.add("input-up");
             }
@@ -298,10 +300,14 @@ function getWeathersToday(response) {
             weathers.push(weatherInfo);
         }
     }
+    if (weathers.length === 0) {
+        weathers.push(response.list[0]);
+    }
     return weathers;
 }
 
 function getHighestWeather(weathers) {
+    console.log(weathers);
     let max = weathers[0].main.temp_max;
     for (const weather of weathers) {
         if (weather.main.temp_max > max) {
