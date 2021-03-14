@@ -250,7 +250,7 @@ function setCurrentInfo(response) {
                             ${Math.round(getLowestWeather(getWeathersToday(response)))}°
                         </h5>
                         <span>
-                            High
+                            Low
                         </span>
                     </div>`;
     currInfo.innerHTML += `<div class="main-info">
@@ -258,7 +258,7 @@ function setCurrentInfo(response) {
                         ${getRainInfo(response)}
                     </h5>
                     <span>
-                        High
+                        Rain
                     </span>
                 </div>`;
     setForecastInfo(response);
